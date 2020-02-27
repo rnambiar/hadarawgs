@@ -38,8 +38,6 @@
         $players_nbr = count( $players );
 
         /*********** Place your code below:  ************/
-
-
         /*
         
         // Examples: set the value of some element defined in your tpl file like this: {MY_VARIABLE_ELEMENT}
@@ -55,28 +53,15 @@
         
         */
         
-        /*
-        
-        // Example: display a specific HTML block for each player in this game.
-        // (note: the block is defined in your .tpl file like this:
-        //      <!-- BEGIN myblock --> 
-        //          ... my HTML code ...
-        //      <!-- END myblock --> 
-        
-
         $this->page->begin_block( "hadarawgs_hadarawgs", "myblock" );
         foreach( $players as $player )
         {
-            $this->page->insert_block( "myblock", array( 
+            $this->page->insert_block( "player", array( 
                                                     "PLAYER_NAME" => $player['player_name'],
-                                                    "SOME_VARIABLE" => $some_value
-                                                    ...
+                                                    "PLAYER_ICON" => $player['player_icon']
+                                                    "PLAYER_COLOR" => $player['player_color']
                                                      ) );
         }
-        
-        */
-
-
 
         /*********** Do not change anything below this line  ************/
   	}

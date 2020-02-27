@@ -1,44 +1,59 @@
 {OVERALL_GAME_HEADER}
 
-<!-- 
---------
--- BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
--- hadarawgs implementation : © Willy Goiffon <dev@z3bra.org>
--- 
--- This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
--- See http://en.boardgamearena.com/#!doc/Studio for more information.
--------
+<div id="playerboards">
+	<!-- BEGIN player -->
+	<div id="playerboard_{DIR}" class="playerboard whiteblock">
+		<div class="playername" style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</div>
+		<div class="playericon_{PLAYER_ICON}"></div>
+		<ul class="medals-silver-container">
+			<li>empty</li>
+			<li>empty</li>
+		</ul>
+		<ul class="medals-gold-container">
+			<li>empty</li>
+			<li>empty</li>
+		</ul>
+		<ul class="resources-container">
+			<li>income:</li>
+			<li>miliraty:</li>
+			<li>culture:</li>
+			<li>food:</li>
+		</ul>
+		<ul class="colonies-container"></ul>
+		<ol class="statues-container">
+			<li>empty</li>
+			<li>empty</li>
+			<li>empty</li>
+			<li>empty</li>
+		</ol>
+		<div class="cards-container">
+			<div class="cards-income-container"></div>
+			<div class="cards-military-container"></div>
+			<div class="cards-culture-container"></div>
+			<div class="cards-food-container"></div>
+			<div class="cards-science-container"></div>
+		</div>
+	</div>
+	<!-- END player -->
+</div>
 
-    hadarawgs_hadarawgs.tpl
-    
-    This is the HTML template of your game.
-    
-    Everything you are writing in this file will be displayed in the HTML page of your game user interface,
-    in the "main game zone" of the screen.
-    
-    You can use in this template:
-    _ variables, with the format {MY_VARIABLE_ELEMENT}.
-    _ HTML block, with the BEGIN/END format
-    
-    See your "view" PHP file to check how to set variables and control blocks
-    
-    Please REMOVE this comment before publishing your game on BGA
--->
-
-
-This is your game interface. You can edit this HTML in your ".tpl" file.
-
+<div id="mainboard">
+	<div class="cards-pile-container">
+		<div class="cards-pile-income"></div>
+		<div class="cards-discard-pile-income"></div>
+		<div class="cards-pile-military"></div>
+		<div class="cards-discard-pile-military"></div>
+		<div class="cards-pile-culture"></div>
+		<div class="cards-discard-pile-culture"></div>
+		<div class="cards-pile-food"></div>
+		<div class="cards-discard-pile-food"></div>
+		<div class="cards-pile-science"></div>
+		<div class="cards-discard-pile-science"></div>
+	</div>
+	<div class="cards-pile-discard"></div>
+</div>
 
 <script type="text/javascript">
-
-// Javascript HTML templates
-
-/*
-// Example:
-var jstpl_some_game_item='<div class="my_game_item" id="my_game_item_${MY_ITEM_ID}"></div>';
-
-*/
-
 </script>  
 
 {OVERALL_GAME_FOOTER}
