@@ -93,6 +93,9 @@ $gameinfos = array(
 // Colors attributed to players
 'player_colors' => array( "ff0000", "008000", "0000ff", "ffa500", "773300" ),
 
+// Player board animals
+'player_animals' => array( "dragon", "lion", "monkey", "pegasus", "scarab" ),
+
 // Favorite colors support : if set to "true", support attribution of favorite colors based on player's preferences (see reattributeColorsBasedOnPreferences PHP method)
 'favorite_colors_support' => true,
 
