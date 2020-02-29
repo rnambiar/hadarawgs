@@ -53,13 +53,12 @@
         
         */
         
-        $this->page->begin_block( "hadarawgs_hadarawgs", "myblock" );
+        $this->page->begin_block( "hadarawgs_hadarawgs", "player" );
         foreach( $players as $player )
         {
             $this->page->insert_block( "player", array( 
                                                     "PLAYER_NAME" => $player['player_name'],
-                                                    "PLAYER_ICON" => $player['player_icon']
-                                                    "PLAYER_COLOR" => $player['player_color']
+                                                    "PLAYER_COLOR" => $player['player_color'],
                                                      ) );
         }
 
