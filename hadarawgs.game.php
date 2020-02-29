@@ -62,6 +62,7 @@ class hadarawgs extends Table
         // The number of colors defined here must correspond to the maximum number of players allowed for the gams
         $gameinfos = self::getGameinfos();
         $default_colors = $gameinfos['player_colors'];
+        $default_animals = $gameinfos['player_animals'];
  
         // Create players
         // Note: if you added some extra field on "player" table in the database (dbmodel.sql), you can initialize it there.
@@ -88,7 +89,16 @@ class hadarawgs extends Table
         //self::initStat( 'player', 'player_teststat1', 0 );  // Init a player statistics (for all players)
 
         // TODO: setup the initial game situation here
-       
+	$sql = "INSERT INTO playerboard (id, animal) VALUES";
+	$values = array();
+
+        foreach( $players as $player_id => $player ) {
+		$animal = array_shift($default_animals);
+		$values[] = "( '$player_id' , '$animal' )";
+	}
+
+        $sql .= implode( $values, ',' );
+        self::DbQuery( $sql );
 
         // Activate first player (which is in general a good idea :) )
         $this->activeNextPlayer();
@@ -115,7 +125,7 @@ class hadarawgs extends Table
         // Note: you can retrieve some extra field you added for "player" table in "dbmodel.sql" if you need it.
         $sql = "SELECT player_id id, player_score score FROM player ";
         $result['players'] = self::getCollectionFromDb( $sql );
-  
+
         // TODO: Gather all information about current game situation (visible by player $current_player_id).
   
         return $result;
@@ -146,8 +156,6 @@ class hadarawgs extends Table
     /*
         In this space, you can put any utility methods useful for your game logic
     */
-
-
 
 //////////////////////////////////////////////////////////////////////////////
 //////////// Player actions
