@@ -55,10 +55,12 @@
         
         $this->page->begin_block( "hadarawgs_hadarawgs", "player" );
         foreach( $players as $player_id=>$player ) {
+	    $board = $this->game->getPlayerBoard($player_id);
             $this->page->insert_block( "player", array( 
                                                     "PLAYER_ID" => $player_id,
                                                     "PLAYER_NAME" => $player['player_name'],
                                                     "PLAYER_COLOR" => $player['player_color'],
+                                                    "PLAYER_ANIMAL" => $board[$player_id]['animal'],
                                                      ) );
         }
 

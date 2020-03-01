@@ -127,6 +127,9 @@ class hadarawgs extends Table
         $result['players'] = self::getCollectionFromDb( $sql );
 
         // TODO: Gather all information about current game situation (visible by player $current_player_id).
+	foreach ($result['players'] as $player) {
+		$player['board'] = $this->getPlayerBoard($player['id']);
+	}
   
         return $result;
     }
@@ -156,6 +159,11 @@ class hadarawgs extends Table
     /*
         In this space, you can put any utility methods useful for your game logic
     */
+
+	function getPlayerBoard($player_id) {
+		$sql = "SELECT * FROM playerboard where id = $player_id";
+		return self::getCollectionFromDb($sql);
+	}
 
 //////////////////////////////////////////////////////////////////////////////
 //////////// Player actions
