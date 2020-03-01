@@ -94,7 +94,7 @@ class hadarawgs extends Table
 
         foreach( $players as $player_id => $player ) {
 		$animal = array_shift($default_animals);
-		$values[] = "( '$player_id' , '$animal' )";
+		$values[] = "( $player_id , '$animal' )";
 	}
 
         $sql .= implode( $values, ',' );
@@ -127,9 +127,8 @@ class hadarawgs extends Table
         $result['players'] = self::getCollectionFromDb( $sql );
 
         // TODO: Gather all information about current game situation (visible by player $current_player_id).
-	foreach ($result['players'] as $player) {
-		$player['board'] = $this->getPlayerBoard($player['id']);
-	}
+        $sql = "SELECT * FROM playerboard";
+        $result['boards'] = self::getCollectionFromDb( $sql );
   
         return $result;
     }
@@ -161,7 +160,7 @@ class hadarawgs extends Table
     */
 
 	function getPlayerBoard($player_id) {
-		$sql = "SELECT * FROM playerboard where id = $player_id";
+		$sql = "SELECT id, animal, income, income_max FROM playerboard where id = $player_id";
 		return self::getCollectionFromDb($sql);
 	}
 

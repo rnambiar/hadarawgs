@@ -51,9 +51,14 @@ function (dojo, declare) {
             // Setting up player boards
             for( var player_id in gamedatas.players )
             {
+		var el;
                 var player = gamedatas.players[player_id];
                          
                 // TODO: Setting up players boards if needed
+		el = document.getElementById('income_p' + player_id);
+		el.innerHTML = gamedatas.boards[player_id]['income'];
+		el = document.getElementById('income_max_p' + player_id);
+		el.innerHTML = gamedatas.boards[player_id]['income_max'];
             }
             
             // TODO: Set up your game interface here, according to "gamedatas"

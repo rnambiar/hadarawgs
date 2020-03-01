@@ -5,22 +5,18 @@
 	<div id="board_p{PLAYER_ID}" class="playerboard whiteblock">
 		<h3 style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</h3>
 		<div class="icon_{PLAYER_ANIMAL}">animal</div>
-		<div class="resources-container">
-			<div class="resource-income">
-				<span class="resource-income-icon token token_income"></span>
-				<span class="resource-income-value">0/0</span>
+		<div class="playerboard_resources">
+			<div class="playerboard_income">
+				<span id="income_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="income_max_p{PLAYER_ID}">-</span></span>
 			</div>
-			<div class="resource-military">
-				<span class="resource-military-icon token"></span>
-				<span class="resource-military-value">0/0</span>
+			<div class="playerboard_military">
+				<span id="military_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="military_max_p{PLAYER_ID}">-</span></span>
 			</div>
-			<div class="resource-culture">
-				<span class="resource-culture-icon token"></span>
-				<span class="resource-culture-value">0/0</span>
+			<div class="playerboard_culture">
+				<span id="culture_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="culture_max_p{PLAYER_ID}">-</span></span>
 			</div>
-			<div class="resource-food">
-				<span class="resource-food-icon token"></span>
-				<span class="resource-food-value">0/0</span>
+			<div class="playerboard_food">
+				<span id="food_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="food_max_p{PLAYER_ID}">-</span></span>
 			</div>
 		</div>
 	</div>

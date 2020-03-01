@@ -23,16 +23,18 @@
 .icon_pegasus::after { content: " - pegasus"; }
 .icon_scarab::after  { content: " - scarab";  }
 
-.resources-container {
+.playerboard_resources {
 	text-align: center;
 	font-weight: bold;
 	display: inline-block;
 }
 
-.resource-income   { padding: 2px; background-color: #ffff66; }
-.resource-military { padding: 2px; background-color: #ffaaaa; }
-.resource-culture  { padding: 2px; background-color: #aaaaff; }
-.resource-food     { padding: 2px; background-color: #aaffaa; }
+.playerboard_income   { padding: 2px; background-color: #ffff66; }
+.playerboard_military { padding: 2px; background-color: #ffaaaa; }
+.playerboard_culture  { padding: 2px; background-color: #aaaaff; }
+.playerboard_food     { padding: 2px; background-color: #aaffaa; }
+
+.smalltext { font-size: 80%; }
 
 /*
     Example of CSS sprites (a black token and a white token, 20x20px each, embedded in the same "tokens.png" 40x20px image):
