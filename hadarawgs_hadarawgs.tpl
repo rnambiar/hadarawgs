@@ -2,8 +2,9 @@
 
 <div id="playerboards">
 	<!-- BEGIN player -->
-	<div id="playerboard_{PLAYER_ID}" class="playerboard whiteblock">
-		<h3 class="playername player-{PLAYER_ANIMAL}" style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</h3>
+	<div id="board_p{PLAYER_ID}" class="playerboard whiteblock">
+		<h3 style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</h3>
+		<div class="icon_{PLAYER_ANIMAL}">animal</div>
 		<div class="resources-container">
 			<div class="resource-income">
 				<span class="resource-income-icon token token_income"></span>

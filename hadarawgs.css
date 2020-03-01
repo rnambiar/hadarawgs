@@ -17,11 +17,11 @@
 
 /********* You can start writing your CSS below this line: **********/
 
-.player-dragon::after  { content: " - dragon";  }
-.player-lion::after    { content: " - lion";    }
-.player-monkey::after  { content: " - monkey";  }
-.player-pegasus::after { content: " - pegasus"; }
-.player-scarab::after  { content: " - scarab";  }
+.icon_dragon::after  { content: " - dragon";  }
+.icon_lion::after    { content: " - lion";    }
+.icon_monkey::after  { content: " - monkey";  }
+.icon_pegasus::after { content: " - pegasus"; }
+.icon_scarab::after  { content: " - scarab";  }
 
 .resources-container {
 	text-align: center;
