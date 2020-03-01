@@ -54,9 +54,9 @@
         */
         
         $this->page->begin_block( "hadarawgs_hadarawgs", "player" );
-        foreach( $players as $player )
-        {
+        foreach( $players as $player_id=>$player ) {
             $this->page->insert_block( "player", array( 
+                                                    "PLAYER_ID" => $player_id,
                                                     "PLAYER_NAME" => $player['player_name'],
                                                     "PLAYER_COLOR" => $player['player_color'],
                                                      ) );

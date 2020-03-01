@@ -2,7 +2,7 @@
 
 <div id="playerboards">
 	<!-- BEGIN player -->
-	<div id="playerboard_{PLAYER_ICON}" class="playerboard whiteblock">
+	<div id="playerboard_{PLAYER_ID}" class="playerboard whiteblock">
 		<h3 class="playername" style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</h3>
 		<div class="resources-container">
 			<div class="resource-income">
