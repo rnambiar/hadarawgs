@@ -6,17 +6,20 @@
 		<h3 style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</h3>
 		<div class="icon_{PLAYER_ANIMAL}">animal</div>
 		<div class="playerboard_resources">
+			<div class="playerboard_coins">
+				<span id="coins_p{PLAYER_ID}">-</span>
+			</div>
 			<div class="playerboard_income">
-				<span id="income_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="income_max_p{PLAYER_ID}">-</span></span>
-			</div>
-			<div class="playerboard_military">
-				<span id="military_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="military_max_p{PLAYER_ID}">-</span></span>
-			</div>
-			<div class="playerboard_culture">
-				<span id="culture_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="culture_max_p{PLAYER_ID}">-</span></span>
+				<span id="income_p{PLAYER_ID}">-</span>
 			</div>
 			<div class="playerboard_food">
-				<span id="food_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="food_max_p{PLAYER_ID}">-</span></span>
+				<span id="food_p{PLAYER_ID}">-</span>
+			</div>
+			<div class="playerboard_military">
+				<span id="military_p{PLAYER_ID}">-</span>
+			</div>
+			<div class="playerboard_culture">
+				<span id="culture_p{PLAYER_ID}">-</span>
 			</div>
 		</div>
 	</div>

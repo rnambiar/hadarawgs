@@ -92,12 +92,19 @@ class hadarawgs extends Table
 		//self::initStat( 'player', 'player_teststat1', 0 );  // Init a player statistics (for all players)
 
 		// TODO: setup the initial game situation here
-		$sql = "INSERT INTO playerboard (id, animal) VALUES";
+		$sql = "INSERT INTO playerboard (id, animal, coins, income, military, culture, food) VALUES";
 		$values = array();
 
+		$i=1;
 		foreach( $players as $player_id => $player ) {
+			$initiative = $this->init_cards[$i++];
+			$income = $initiative['income'];
+			$military = $initiative['military'];
+			$culture = $initiative['culture'];
+			$food = $initiative['food'];
+			$coins = $income + $initiative['coins'];
 			$animal = array_shift($default_animals);
-			$values[] = "('$player_id', '$animal')";
+			$values[] = "($player_id, '$animal', $coins, $income, $military, $culture, $food)";
 		}
 
 		$sql .= implode( $values, ',' );
@@ -162,7 +169,7 @@ class hadarawgs extends Table
 	*/
 
 	function getPlayerBoard($player_id) {
-		$sql = "SELECT id, animal, income, income_max FROM playerboard where id = $player_id";
+		$sql = "SELECT id, animal FROM playerboard where id = $player_id";
 		return self::getCollectionFromDb($sql);
 	}
 

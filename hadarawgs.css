@@ -29,12 +29,11 @@
 	display: inline-block;
 }
 
+.playerboard_coins    { padding: 2px; background-color: silver; }
 .playerboard_income   { padding: 2px; background-color: #ffff66; }
 .playerboard_military { padding: 2px; background-color: #ffaaaa; }
 .playerboard_culture  { padding: 2px; background-color: #aaaaff; }
 .playerboard_food     { padding: 2px; background-color: #aaffaa; }
-
-.smalltext { font-size: 80%; }
 
 /*
     Example of CSS sprites (a black token and a white token, 20x20px each, embedded in the same "tokens.png" 40x20px image):

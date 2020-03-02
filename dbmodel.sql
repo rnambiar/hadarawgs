@@ -12,9 +12,10 @@
 CREATE TABLE IF NOT EXISTS `playerboard` (
 	`id` int(10) unsigned NOT NULL,
 	`animal` varchar(255) NOT NULL,
-	`income`   int(10) DEFAULT 0, `income_max`   int(10) DEFAULT 0,
-	`military` int(10) DEFAULT 0, `military_max` int(10) DEFAULT 0,
-	`culture`  int(10) DEFAULT 0, `culture_max`  int(10) DEFAULT 0,
-	`food`     int(10) DEFAULT 0, `food_max`     int(10) DEFAULT 0,
+	`coins`    int(10) DEFAULT 0,
+	`income`   int(10) DEFAULT 0,
+	`military` int(10) DEFAULT 0,
+	`culture`  int(10) DEFAULT 0,
+	`food`     int(10) DEFAULT 0,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
