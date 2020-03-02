@@ -52,6 +52,15 @@ function (dojo, declare) {
 			for (var player_id in gamedatas.players) {
 				var player = gamedatas.players[player_id];
 				var board  = gamedatas.boards[player_id];
+				var tokens = ["income", "military", "culture", "food"];
+
+				// Set token values on each player board
+				tokens.forEach(function (token) {
+					var cur = document.getElementById(token +'_p' + player_id);
+					var max = document.getElementById(token +'_max_p' + player_id);
+					cur.innerHTML = board[token];
+					max.innerHTML = board[token + '_max'];
+				});
 			}
 
 			// TODO: Set up your game interface here, according to "gamedatas"
