@@ -3,8 +3,7 @@
 <div id="playerboards">
 	<!-- BEGIN player -->
 	<div id="board_p{PLAYER_ID}" class="playerboard whiteblock">
-		<h3 style="color:#{PLAYER_COLOR}">{PLAYER_NAME}</h3>
-		<div class="icon_{PLAYER_ANIMAL}">animal</div>
+		<h3 style="color:#{PLAYER_COLOR}" class="icon_{PLAYER_ANIMAL}">{PLAYER_NAME}</h3>
 		<div class="playerboard_resources">
 			<div class="playerboard_coins">
 				<span id="coins_p{PLAYER_ID}">-</span>

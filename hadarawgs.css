@@ -29,7 +29,7 @@
 	display: inline-block;
 }
 
-.playerboard_coins    { padding: 2px; background-color: silver; }
+.playerboard_coins    { padding: 2px; background-color: #d1833a; }
 .playerboard_income   { padding: 2px; background-color: #ffff66; }
 .playerboard_military { padding: 2px; background-color: #ffaaaa; }
 .playerboard_culture  { padding: 2px; background-color: #aaaaff; }
