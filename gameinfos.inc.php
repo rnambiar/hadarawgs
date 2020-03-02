@@ -1,13 +1,10 @@
 <?php
 
 /*
-    From this file, you can edit the various meta-information of your game.
-
-    Once you modified the file, don't forget to click on "Reload game informations" from the Control Panel in order in can be taken into account.
-
-    See documentation about this file here:
-    http://en.doc.boardgamearena.com/Game_meta-information:_gameinfos.inc.php
-
+ * From this file, you can edit the various meta-information of your game.
+ * Once you modified the file, don't forget to click on "Reload game informations" from the Control Panel in order in can be taken into account.
+ * See documentation about this file here:
+ * http://en.doc.boardgamearena.com/Game_meta-information:_gameinfos.inc.php
 */
 
 $gameinfos = array(
@@ -28,13 +25,13 @@ $gameinfos = array(
 'publisher' => 'Hans im Glück',
 
 // Url of game publisher website
-'publisher_website' => 'http://www.mypublishingcompany.com/',
+'publisher_website' => 'https://www.hans-im-glueck.de/',
 
 // Board Game Geek ID of the publisher
-'publisher_bgg_id' => 1234,
+'publisher_bgg_id' => 133,
 
 // Board game geek ID of the game
-'bgg_id' => 54321,
+'bgg_id' => 269144,
 
 
 // Players configuration that can be played (ex: 2 to 4 players)
@@ -85,10 +82,10 @@ $gameinfos = array(
 'luck' => 3,
 
 // Strategy of the game, from 0 (no strategy can be setup) to 5 (totally based on strategy)
-'strategy' => 3,
+'strategy' => 4,
 
 // Diplomacy of the game, from 0 (no interaction in this game) to 5 (totally based on interaction and discussion between players)
-'diplomacy' => 3,
+'diplomacy' => 1,
 
 // Colors attributed to players
 'player_colors' => array( "ff0000", "008000", "0000ff", "ffa500", "773300" ),
@@ -107,17 +104,17 @@ $gameinfos = array(
 // Note: game interface = space on the left side, without the column on the right
 'game_interface_width' => array(
 
-    // Minimum width
-    //  default: 740
-    //  maximum possible value: 740 (ie: your game interface should fit with a 740px width (correspond to a 1024px screen)
-    //  minimum possible value: 320 (the lowest value you specify, the better the display is on mobile)
-    'min' => 740,
+	// Minimum width
+	//  default: 740
+	//  maximum possible value: 740 (ie: your game interface should fit with a 740px width (correspond to a 1024px screen)
+	//  minimum possible value: 320 (the lowest value you specify, the better the display is on mobile)
+	'min' => 540,
 
-    // Maximum width
-    //  default: null (ie: no limit, the game interface is as big as the player's screen allows it).
-    //  maximum possible value: unlimited
-    //  minimum possible value: 740
-    'max' => null
+	// Maximum width
+	//  default: null (ie: no limit, the game interface is as big as the player's screen allows it).
+	//  maximum possible value: unlimited
+	//  minimum possible value: 740
+	'max' => null
 ),
 
 // Game presentation

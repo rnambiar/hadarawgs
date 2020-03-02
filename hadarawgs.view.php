@@ -23,49 +23,40 @@
  * Note: if the HTML of your game interface is always the same, you don't have to place anything here.
  *
  */
-  
-  require_once( APP_BASE_PATH."view/common/game.view.php" );
-  
-  class view_hadarawgs_hadarawgs extends game_view
-  {
-    function getGameName() {
-        return "hadarawgs";
-    }    
-  	function build_page( $viewArgs )
-  	{		
-  	    // Get players & players number
-        $players = $this->game->loadPlayersBasicInfos();
-        $players_nbr = count( $players );
 
-        /*********** Place your code below:  ************/
-        /*
-        
-        // Examples: set the value of some element defined in your tpl file like this: {MY_VARIABLE_ELEMENT}
+require_once( APP_BASE_PATH."view/common/game.view.php" );
 
-        // Display a specific number / string
-        $this->tpl['MY_VARIABLE_ELEMENT'] = $number_to_display;
+class view_hadarawgs_hadarawgs extends game_view
+{
+	function getGameName() {
+		return "hadarawgs";
+	}
+	function build_page( $viewArgs )
+	{
+		// Get players & players number
+		$players = $this->game->loadPlayersBasicInfos();
+		$players_nbr = count( $players );
 
-        // Display a string to be translated in all languages: 
-        $this->tpl['MY_VARIABLE_ELEMENT'] = self::_("A string to be translated");
+		/*********** Place your code below:  ************/
+		/*
+		 * Examples: set the value of some element defined in your tpl file like this: {MY_VARIABLE_ELEMENT}
+		 $this->tpl['MY_VARIABLE_ELEMENT'] = $number_to_display;
+		 $this->tpl['MY_VARIABLE_ELEMENT'] = self::_("A string to be translated");
+		 $this->tpl['MY_VARIABLE_ELEMENT'] = self::raw( $some_html_code );
+		 */
 
-        // Display some HTML content of your own:
-        $this->tpl['MY_VARIABLE_ELEMENT'] = self::raw( $some_html_code );
-        
-        */
-        
-        $this->page->begin_block( "hadarawgs_hadarawgs", "player" );
-        foreach( $players as $player_id=>$player ) {
-	    $board = $this->game->getPlayerBoard($player_id);
-            $this->page->insert_block( "player", array( 
-                                                    "PLAYER_ID" => $player_id,
-                                                    "PLAYER_NAME" => $player['player_name'],
-                                                    "PLAYER_COLOR" => $player['player_color'],
-                                                    "PLAYER_ANIMAL" => $board[$player_id]['animal'],
-                                                     ) );
-        }
+		$this->page->begin_block( "hadarawgs_hadarawgs", "player" );
+		foreach( $players as $player_id=>$player ) {
+			$board = $this->game->getPlayerBoard($player_id);
+			$this->page->insert_block( "player", array(
+				"PLAYER_ID" => $player_id,
+				"PLAYER_NAME" => $player['player_name'],
+				"PLAYER_COLOR" => $player['player_color'],
+				"PLAYER_ANIMAL" => $board[$player_id]['animal'],
+				)
+			);
+		}
 
-        /*********** Do not change anything below this line  ************/
-  	}
-  }
-  
-
+		/*********** Do not change anything below this line  ************/
+	}
+}
