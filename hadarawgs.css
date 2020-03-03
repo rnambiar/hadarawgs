@@ -36,19 +36,18 @@
 .playerboard_food     { padding: 2px; background-color: #aaffaa; }
 
 /*
-    Example of CSS sprites (a black token and a white token, 20x20px each, embedded in the same "tokens.png" 40x20px image):
+ * Player panel (top-right score, ELO, resources, ...)
+ *
+ */
+.pp_value { margin-right: 8px; }
+.cube {
+	width: 16px;
+	height: 16px;
+	background-repeat: none;
+	background-position: 0px 0px;
+	display: inline-block;
+}
 
-    .white_token {
-        background-image: url('img/tokens.png');
-        background-position: 0px 0px;
-    }
-    .black_token {
-        background-image: url('img/tokens.png');
-        background-position: -20px 0px;
-    }
-    .token {
-        width: 20px;
-        height: 20px;
-        background-repeat: none;
-    }
-*/
+/* TODO: merge all icons into a single image (w/ transparency) */
+.cube_coins { background-image: url('img/coins.png'); }
+.cube_food  { background-image: url('img/grape.png'); }

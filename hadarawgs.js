@@ -49,19 +49,24 @@ function (dojo, declare) {
 			console.log( "Starting game setup" );
 
 			// Setting up player boards
+			// TODO: Set up your game interface here, according to "gamedatas"
 			for (var player_id in gamedatas.players) {
 				var player = gamedatas.players[player_id];
 				var board  = gamedatas.boards[player_id];
-				var tokens = ["coins", "income", "military", "culture", "food"];
+
+				// Setup player panel values
+				board['ncard'] = 0;
+				var panel = $('player_board_' + player_id);
+				dojo.place(this.format_block('jstpl_player_board', board), panel);
 
 				// Set token values on each player board
+				var tokens = ["coins", "income", "military", "culture", "food"];
 				tokens.forEach(function (token) {
-					var cur = document.getElementById(token +'_p' + player_id);
+					var cur = $(token +'_p' + player_id);
 					cur.innerHTML = board[token];
 				});
-			}
 
-			// TODO: Set up your game interface here, according to "gamedatas"
+			}
 
 
 			// Setup game notifications to handle (see "setupNotifications" method below)

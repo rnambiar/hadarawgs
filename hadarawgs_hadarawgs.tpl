@@ -26,6 +26,10 @@
 </div>
 
 <script type="text/javascript">
-</script>  
+	var jstpl_player_board = '<div class="pp_board">\
+		<div class="cube cube_coins"></div><span class="pp_value pp_coins">${coins}<span class="smalltext">/${income}</span></span>\
+		<div class="cube cube_food "></div><span class="pp_value pp_food ">${ncard}<span class="smalltext">/${food}</span></span>\
+		</div>';
+</script>
 
 {OVERALL_GAME_FOOTER}
