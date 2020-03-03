@@ -60,7 +60,7 @@ function (dojo, declare) {
 				dojo.place(this.format_block('jstpl_player_board', board), panel);
 
 				// Set token values on each player board
-				var tokens = ["coins", "income", "military", "culture", "food"];
+				var tokens = ["coins", "ncard", "income", "military", "culture", "food"];
 				tokens.forEach(function (token) {
 					var cur = $(token +'_p' + player_id);
 					cur.innerHTML = board[token];

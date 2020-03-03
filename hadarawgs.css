@@ -29,7 +29,6 @@
 	display: inline-block;
 }
 
-.playerboard_coins    { padding: 2px; background-color: #d1833a; }
 .playerboard_income   { padding: 2px; background-color: #ffff66; }
 .playerboard_military { padding: 2px; background-color: #ffaaaa; }
 .playerboard_culture  { padding: 2px; background-color: #aaaaff; }
@@ -40,7 +39,7 @@
  *
  */
 .pp_value { margin-right: 8px; }
-.cube {
+.icon {
 	width: 16px;
 	height: 16px;
 	background-repeat: none;
@@ -49,5 +48,5 @@
 }
 
 /* TODO: merge all icons into a single image (w/ transparency) */
-.cube_coins { background-image: url('img/coins.png'); }
-.cube_food  { background-image: url('img/grape.png'); }
+.icon_coins { background-image: url('img/coins.png'); }
+.icon_food  { background-image: url('img/grape.png'); }
