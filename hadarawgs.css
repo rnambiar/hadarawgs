@@ -17,11 +17,11 @@
 
 /********* You can start writing your CSS below this line: **********/
 
-.icon_dragon::after  { content: " - dragon";  }
-.icon_lion::after    { content: " - lion";    }
-.icon_monkey::after  { content: " - monkey";  }
-.icon_pegasus::after { content: " - pegasus"; }
-.icon_scarab::after  { content: " - scarab";  }
+.player_dragon::after  { content: " - dragon";  }
+.player_lion::after    { content: " - lion";    }
+.player_monkey::after  { content: " - monkey";  }
+.player_pegasus::after { content: " - pegasus"; }
+.player_scarab::after  { content: " - scarab";  }
 
 .playerboard_resources {
 	text-align: center;
@@ -43,10 +43,21 @@
 	width: 16px;
 	height: 16px;
 	background-repeat: none;
-	background-position: 0px 0px;
 	display: inline-block;
 }
 
 /* TODO: merge all icons into a single image (w/ transparency) */
 .icon_coins { background-image: url('img/coins.png'); }
 .icon_food  { background-image: url('img/grape.png'); }
+
+.icon_animal {
+	width: 32px;
+	height: 37px;
+	background-size: 300%;
+	background-image: url('img/animals.png');
+}
+.icon_monkey  { background-position:    0px   0px; }
+.icon_scarab  { background-position:  -32px   0px; }
+.icon_dragon  { background-position:  -64px   0px; }
+.icon_pegasus { background-position:    0px -38px; }
+.icon_lion    { background-position:  -32px -38px; }

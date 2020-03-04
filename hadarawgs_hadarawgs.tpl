@@ -3,7 +3,7 @@
 <div id="playerboards">
 	<!-- BEGIN player -->
 	<div id="board_p{PLAYER_ID}" class="playerboard whiteblock">
-		<h3 style="color:#{PLAYER_COLOR}" class="icon_{PLAYER_ANIMAL}">{PLAYER_NAME}</h3>
+		<h3 style="color:#{PLAYER_COLOR}" class="player_{PLAYER_ANIMAL}">{PLAYER_NAME}</h3>
 		<div class="playerboard_resources">
 			<div class="playerboard_income">
 				<span id="coins_p{PLAYER_ID}">-</span><span class="smalltext">/<span id="income_p{PLAYER_ID}">-</span></span>
@@ -20,6 +20,15 @@
 		</div>
 	</div>
 	<!-- END player -->
+</div>
+
+<div id="animals" class="debug">
+	<h3>Animals</h3>
+	<div class="icon icon_animal icon_monkey"></div>
+	<div class="icon icon_animal icon_scarab"></div>
+	<div class="icon icon_animal icon_dragon"></div>
+	<div class="icon icon_animal icon_pegasus"></div>
+	<div class="icon icon_animal icon_lion"></div>
 </div>
 
 <script type="text/javascript">
