@@ -66,3 +66,20 @@
 .icon_dragon  { background-position:  -64px   0px; }
 .icon_pegasus { background-position:    0px -38px; }
 .icon_lion    { background-position:  -32px -38px; }
+
+.card {
+	width: 64px;
+	height: 90px;
+	border-radius: 6px;
+	display: inline-block;
+	box-shadow: 0 0 4px;
+}
+
+.card_income   { background-color: #ffff66; }
+.card_military { background-color: #ffaaaa; }
+.card_culture  { background-color: #aaaaff; }
+.card_food     { background-color: #aaffaa; }
+
+.card_epoch_1::after { padding: 4px; content: "I"; }
+.card_epoch_2::after { padding: 4px; content: "II"; }
+.card_epoch_3::after { padding: 4px; content: "III"; }

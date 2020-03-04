@@ -22,6 +22,21 @@
 	<div class="icon icon_animal icon_pegasus"></div>
 	<div class="icon icon_animal icon_lion"></div>
 </div>
+<div id="cards" class="debug">
+	<h3>Cards</h3>
+	<div class="card card_income card_epoch_1"></div>
+	<div class="card card_income card_epoch_2"></div>
+	<div class="card card_income card_epoch_3"></div>
+	<div class="card card_military card_epoch_1"></div>
+	<div class="card card_military card_epoch_2"></div>
+	<div class="card card_military card_epoch_3"></div>
+	<div class="card card_culture card_epoch_1"></div>
+	<div class="card card_culture card_epoch_2"></div>
+	<div class="card card_culture card_epoch_3"></div>
+	<div class="card card_food card_epoch_1"></div>
+	<div class="card card_food card_epoch_2"></div>
+	<div class="card card_food card_epoch_3"></div>
+</div>
 
 <script type="text/javascript">
 	var jstpl_player_board = '<div class="pp_board">\
