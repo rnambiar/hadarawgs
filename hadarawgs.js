@@ -53,23 +53,25 @@ function (dojo, declare) {
 			for (var player_id in gamedatas.players) {
 				var player = gamedatas.players[player_id];
 				var board  = gamedatas.boards[player_id];
+				board['ncard'] = 0;
 
 				// Setup player panel values
-				board['ncard'] = 0;
 				var panel = $('player_board_' + player_id);
 				dojo.place(this.format_block('jstpl_player_board', board), panel);
 
+				// Make card numbers stand out if food level is too low
+				if (board['ncard'] > board['food'])
+					document.getElementById('pp_ncard_p'+ player_id).classList.add('standout');
+
 				// Set token values on each player board
-				var tokens = ["coins", "ncard", "income", "military", "culture", "food"];
+				var tokens = ["income", "military", "culture", "food"];
 				tokens.forEach(function (token) {
 					var cur = $(token +'_p' + player_id);
 					cur.innerHTML = board[token];
 				});
-
 			}
 
-
-			// Setup game notifications to handle (see "setupNotifications" method below)
+		// Setup game notifications to handle (see "setupNotifications" method below)
 			this.setupNotifications();
 
 			console.log( "Ending game setup" );

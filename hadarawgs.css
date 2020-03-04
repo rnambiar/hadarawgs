@@ -17,6 +17,11 @@
 
 /********* You can start writing your CSS below this line: **********/
 
+.standout {
+	color: red;
+	font-weight: bold;
+}
+
 .player_dragon::after  { content: " - dragon";  }
 .player_lion::after    { content: " - lion";    }
 .player_monkey::after  { content: " - monkey";  }
@@ -38,7 +43,7 @@
  * Player panel (top-right score, ELO, resources, ...)
  *
  */
-.pp_value { margin-right: 8px; }
+.pp_value { margin-right: 2px; }
 .icon {
 	width: 16px;
 	height: 16px;
