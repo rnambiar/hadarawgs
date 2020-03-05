@@ -14,6 +14,11 @@
 	<!-- END player -->
 </div>
 
+<div id="gameboard" class="debug">
+	<div id="deck" class="whiteblock deck"></div>
+	<div id="discard" class="whiteblock deck discard"></div>
+</div>
+
 <div id="animals" class="debug">
 	<h3>Animals</h3>
 	<div class="icon icon_animal icon_monkey"></div>
@@ -21,21 +26,6 @@
 	<div class="icon icon_animal icon_dragon"></div>
 	<div class="icon icon_animal icon_pegasus"></div>
 	<div class="icon icon_animal icon_lion"></div>
-</div>
-<div id="cards" class="debug">
-	<h3>Cards</h3>
-	<div class="card card_income card_epoch_1"></div>
-	<div class="card card_income card_epoch_2"></div>
-	<div class="card card_income card_epoch_3"></div>
-	<div class="card card_military card_epoch_1"></div>
-	<div class="card card_military card_epoch_2"></div>
-	<div class="card card_military card_epoch_3"></div>
-	<div class="card card_culture card_epoch_1"></div>
-	<div class="card card_culture card_epoch_2"></div>
-	<div class="card card_culture card_epoch_3"></div>
-	<div class="card card_food card_epoch_1"></div>
-	<div class="card card_food card_epoch_2"></div>
-	<div class="card card_food card_epoch_3"></div>
 </div>
 
 <script type="text/javascript">
