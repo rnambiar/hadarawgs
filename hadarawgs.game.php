@@ -60,15 +60,11 @@ class hadarawgs extends Table
 	*/
 	protected function setupNewGame( $players, $options = array() )
 	{
-		// Set the colors of the players with HTML color code
-		// The default below is red/green/blue/orange/brown
-		// The number of colors defined here must correspond to the maximum number of players allowed for the gams
 		$gameinfos = self::getGameinfos();
 		$default_colors = $gameinfos['player_colors'];
 		$default_animals = $gameinfos['player_animals'];
 
 		// Create players
-		// Note: if you added some extra field on "player" table in the database (dbmodel.sql), you can initialize it there.
 		$sql = "INSERT INTO player (
 			player_id,
 			player_color,
@@ -78,7 +74,13 @@ class hadarawgs extends Table
 		$values = array();
 		foreach( $players as $player_id => $player ) {
 			$color = array_shift( $default_colors );
-			$values[] = "('".$player_id."','$color','".$player['player_canal']."','".addslashes( $player['player_name'] )."','".addslashes( $player['player_avatar'] )."')";
+			$values[] = "(
+				'$player_id',
+				'$color',
+				'" . $player['player_canal'] ."',
+				'" . addslashes( $player['player_name'] ) ."',
+				'" . addslashes( $player['player_avatar'] ) ."'
+			)";
 		}
 		$sql .= implode( $values, ',' );
 		self::DbQuery( $sql );
@@ -110,7 +112,6 @@ class hadarawgs extends Table
 			$coins = $income + $initiative['coins'];
 			$values[] = "($player_id, '$animal', $coins, $income, $military, $culture, $food)";
 		}
-
 		$sql .= implode( $values, ',' );
 		self::DbQuery( $sql );
 
@@ -190,7 +191,8 @@ class hadarawgs extends Table
 		In this space, you can put any utility methods useful for your game logic
 	*/
 
-	function getPlayerBoard($player_id) {
+	function getPlayerBoard($player_id)
+	{
 		$sql = "SELECT id, animal FROM playerboard where id = $player_id";
 		return self::getCollectionFromDb($sql);
 	}
