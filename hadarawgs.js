@@ -18,7 +18,8 @@
 define([
 	"dojo","dojo/_base/declare",
 	"ebg/core/gamegui",
-	"ebg/counter"
+	"ebg/counter",
+	"ebg/stock"
 ],
 
 function (dojo, declare) {
@@ -26,10 +27,9 @@ function (dojo, declare) {
 		constructor: function() {
 			console.log('hadarawgs constructor');
 
-			// Here, you can init the global variables of your user interface
-			// Example:
-			// this.myGlobalValue = 0;
-
+			// global variables
+			this.cardwidth  = 64;
+			this.cardheight = 95;
 		},
 
 		/*
@@ -71,7 +71,19 @@ function (dojo, declare) {
 				});
 			}
 
-		// Setup game notifications to handle (see "setupNotifications" method below)
+			this.deck = new ebg.stock();
+			this.deck.create(this, $('deck'), this.cardwidth, this.cardheight);
+			this.deck.image_items_per_row = 5;
+			this.deck.centerItems = true;
+			for (var epoch = 3; epoch > 0; epoch--) {
+				for (var type = 1; type < 6; type++) {
+					this.deck.addItemType((epoch-1)*5 + type, epoch, g_gamethemeurl+'img/cards.png', (epoch-1)*5 + type);
+					this.deck.addToStock((epoch-1)*5 + type, 'deck');
+				}
+			}
+			this.deck.setOverlap(50, 50);
+
+			// Setup game notifications to handle (see "setupNotifications" method below)
 			this.setupNotifications();
 
 			console.log( "Ending game setup" );
