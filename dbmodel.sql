@@ -19,3 +19,12 @@ CREATE TABLE IF NOT EXISTS `playerboard` (
 	`food`     int(10) DEFAULT 0,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `card` (
+  `card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `card_type` varchar(32) NOT NULL,
+  `card_type_arg` int(10) NOT NULL,
+  `card_location` varchar(32) NOT NULL,
+  `card_location_arg` int(10) NOT NULL,
+  PRIMARY KEY (`card_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

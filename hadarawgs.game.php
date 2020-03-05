@@ -39,6 +39,10 @@ class hadarawgs extends Table
 			//    "my_second_game_variant" => 101,
 			//      ...
 		) );
+
+		// setup deck(s) to store all our cards
+		$this->cards = self::getNew("module.common.deck");
+		$this->cards->init("card");
 	}
 
 	protected function getGameName( )
@@ -95,20 +99,38 @@ class hadarawgs extends Table
 		$sql = "INSERT INTO playerboard (id, animal, coins, income, military, culture, food) VALUES";
 		$values = array();
 
-		$i=1;
+		shuffle($this->initiative);
 		foreach( $players as $player_id => $player ) {
-			$initiative = $this->init_cards[$i++];
+			$animal = array_shift($default_animals);
+			$initiative = array_shift($this->initiative);
 			$income = $initiative['income'];
 			$military = $initiative['military'];
 			$culture = $initiative['culture'];
 			$food = $initiative['food'];
 			$coins = $income + $initiative['coins'];
-			$animal = array_shift($default_animals);
 			$values[] = "($player_id, '$animal', $coins, $income, $military, $culture, $food)";
 		}
 
 		$sql .= implode( $values, ',' );
 		self::DbQuery( $sql );
+
+		// Create a deck of setup cards
+		$this->cards->createCards($this->card_setup, 'deck');
+
+		// Create all epoch cards and store them in a deck
+		$cards = array();
+		foreach ($this->card_types as $type) {
+			$n = ($type == "science") ? 14 : 10;
+			for ($epoch = 0; $epoch < 3; $epoch++)
+				$cards[] = array('type' => $type, 'type_arg' => $epoch, 'nbr' => $n);
+		}
+
+		/*
+		 * Put them all in the same deck. They will be
+		 * moved to their respective 'type' deck at the
+		 * beginning of each epoch
+		 */
+		$this->cards->createCards($cards, 'deck');
 
 		// Activate first player (which is in general a good idea :) )
 		$this->activeNextPlayer();
