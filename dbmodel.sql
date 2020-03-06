@@ -20,11 +20,16 @@ CREATE TABLE IF NOT EXISTS `playerboard` (
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- Used for epoch and setup cards
+-- 	type: "setup", "income", "military", …
+-- 	type_arg: epoch number or initiative value
+-- 	card_location: "deck", "hand", "deck_<resource>", "discard_<resource>"
+-- 	card_location_arg: used internally by "Deck"
 CREATE TABLE IF NOT EXISTS `card` (
-  `card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `card_type` varchar(32) NOT NULL,
-  `card_type_arg` int(10) NOT NULL,
-  `card_location` varchar(32) NOT NULL,
-  `card_location_arg` int(10) NOT NULL,
-  PRIMARY KEY (`card_id`)
+	`card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+	`card_type` varchar(32) NOT NULL,
+	`card_type_arg` int(10) NOT NULL,
+	`card_location` varchar(32) NOT NULL,
+	`card_location_arg` int(10) NOT NULL,
+	PRIMARY KEY (`card_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
