@@ -87,11 +87,9 @@ $gameinfos = array(
 // Diplomacy of the game, from 0 (no interaction in this game) to 5 (totally based on interaction and discussion between players)
 'diplomacy' => 1,
 
-// Colors attributed to players
-'player_colors' => array( "ff0000", "008000", "0000ff", "ffa500", "773300" ),
-
-// Player board animals
-'player_animals' => array( "dragon", "lion", "monkey", "pegasus", "scarab" ),
+// Colors attributed to players - used for animals
+'player_colors'  => array( "d80000", "ffb000", "804000", "ffffff", "408000" ),
+'player_animals' => array( "dragon", "lion",   "monkey", "pegasus","scarab" ),
 
 // Favorite colors support : if set to "true", support attribution of favorite colors based on player's preferences (see reattributeColorsBasedOnPreferences PHP method)
 'favorite_colors_support' => true,

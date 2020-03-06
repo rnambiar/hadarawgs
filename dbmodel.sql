@@ -11,7 +11,6 @@
 
 CREATE TABLE IF NOT EXISTS `playerboard` (
 	`id` int(10) unsigned NOT NULL,
-	`animal` varchar(255) NOT NULL,
 	`coins`    int(10) DEFAULT 0,
 	`income`   int(10) DEFAULT 0,
 	`military` int(10) DEFAULT 0,

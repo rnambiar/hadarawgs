@@ -62,7 +62,6 @@ class hadarawgs extends Table
 	{
 		$gameinfos = self::getGameinfos();
 		$default_colors = $gameinfos['player_colors'];
-		$default_animals = $gameinfos['player_animals'];
 
 		// Create players
 		$sql = "INSERT INTO player (
@@ -98,19 +97,18 @@ class hadarawgs extends Table
 		//self::initStat( 'player', 'player_teststat1', 0 );  // Init a player statistics (for all players)
 
 		// TODO: setup the initial game situation here
-		$sql = "INSERT INTO playerboard (id, animal, coins, income, military, culture, food) VALUES";
+		$sql = "INSERT INTO playerboard (id, coins, income, military, culture, food) VALUES";
 		$values = array();
 
 		shuffle($this->initiative);
 		foreach( $players as $player_id => $player ) {
-			$animal = array_shift($default_animals);
 			$initiative = array_shift($this->initiative);
 			$income = $initiative['income'];
 			$military = $initiative['military'];
 			$culture = $initiative['culture'];
 			$food = $initiative['food'];
 			$coins = $income + $initiative['coins'];
-			$values[] = "($player_id, '$animal', $coins, $income, $military, $culture, $food)";
+			$values[] = "($player_id, $coins, $income, $military, $culture, $food)";
 		}
 		$sql .= implode( $values, ',' );
 		self::DbQuery( $sql );
@@ -190,12 +188,6 @@ class hadarawgs extends Table
 	/*
 		In this space, you can put any utility methods useful for your game logic
 	*/
-
-	function getPlayerBoard($player_id)
-	{
-		$sql = "SELECT id, animal FROM playerboard where id = $player_id";
-		return self::getCollectionFromDb($sql);
-	}
 
 //////////////////////////////////////////////////////////////////////////////
 //////////// Player actions

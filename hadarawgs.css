@@ -22,11 +22,12 @@
 	font-weight: bold;
 }
 
-.player_dragon::after  { content: " - dragon";  }
-.player_lion::after    { content: " - lion";    }
-.player_monkey::after  { content: " - monkey";  }
-.player_pegasus::after { content: " - pegasus"; }
-.player_scarab::after  { content: " - scarab";  }
+/* animals match player colors
+.player_d80000::after { fond-size: 70%; content: " - dragon";  }
+.player_ffb000::after { fond-size: 70%; content: " - lion";    }
+.player_804000::after { fond-size: 70%; content: " - monkey";  }
+.player_ffffff::after { fond-size: 70%; content: " - pegasus"; }
+.player_408000::after { fond-size: 70%; content: " - scarab";  }
 
 .playerboard_resources {
 	text-align: center;
