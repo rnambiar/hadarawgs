@@ -22,23 +22,23 @@
 	font-weight: bold;
 }
 
-/* animals match player colors
+/* animals match player colors */
 .player_d80000::after { fond-size: 70%; content: " - dragon";  }
 .player_ffb000::after { fond-size: 70%; content: " - lion";    }
 .player_804000::after { fond-size: 70%; content: " - monkey";  }
 .player_ffffff::after { fond-size: 70%; content: " - pegasus"; }
 .player_408000::after { fond-size: 70%; content: " - scarab";  }
 
-.playerboard_resources {
-	text-align: center;
-	font-weight: bold;
-	display: inline-block;
-}
+.playerboard {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url('img/playerboard.png');
+	color: white;
+	text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
 
-.playerboard_income   { padding: 2px; background-color: #ffff66; }
-.playerboard_military { padding: 2px; background-color: #ffaaaa; }
-.playerboard_culture  { padding: 2px; background-color: #aaaaff; }
-.playerboard_food     { padding: 2px; background-color: #aaffaa; }
+	/* used to keep board aspect ratio */
+	padding-top: 42.8%;
+}
 
 /*
  * Player panel (top-right score, ELO, resources, ...)
