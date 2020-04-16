@@ -29,7 +29,7 @@ function (dojo, declare) {
 
 			// global variables
 			this.cardwidth  = 64;
-			this.cardheight = 95;
+			this.cardheight = 96;
 		},
 
 		/*
@@ -73,15 +73,18 @@ function (dojo, declare) {
 
 			this.deck = new ebg.stock();
 			this.deck.create(this, $('deck'), this.cardwidth, this.cardheight);
-			this.deck.image_items_per_row = 5;
+			this.deck.image_items_per_row = 10;
 			this.deck.centerItems = true;
-			for (var epoch = 3; epoch > 0; epoch--) {
-				for (var type = 1; type < 6; type++) {
-					this.deck.addItemType((epoch-1)*5 + type, epoch, g_gamethemeurl+'img/cards.png', (epoch-1)*5 + type);
-					this.deck.addToStock((epoch-1)*5 + type, 'deck');
+
+			for (var epoch = 0; epoch < 3; epoch++) {
+				for (cardtype = 0; cardtype < 5; cardtype++) {
+					for (var cardid = 0; cardid < 10; cardid++) {
+						var cardref = cardtype * 10 + epoch * 50 + cardid;
+						this.deck.addItemType(cardref, cardtype, g_gamethemeurl + 'img/cards_small.png', cardref);
+						this.deck.addToStock(cardref, 'deck');
+					}
 				}
 			}
-			this.deck.setOverlap(50, 50);
 
 			// Setup game notifications to handle (see "setupNotifications" method below)
 			this.setupNotifications();

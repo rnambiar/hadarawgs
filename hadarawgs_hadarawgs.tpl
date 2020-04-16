@@ -31,7 +31,7 @@
 			<div class="resource"><span id="food_p{PLAYER_ID}">-</span></div>
 		</div>
 	</div>
-	<div class="whiteblock card_area"></div>
+	<div id="deck_p{PLAYER_ID}"class="whiteblock card_area"></div>
 	<!-- END player -->
 </div>
 
@@ -40,7 +40,7 @@
 	<div id="discard" class="whiteblock deck discard"></div>
 </div>
 
-<div id="animals" class="debug">
+<div id="animals" class="whiteblock debug">
 	<h3>Animals</h3>
 	<div class="icon icon_animal icon_monkey"></div>
 	<div class="icon icon_animal icon_scarab"></div>
@@ -54,6 +54,7 @@
 		<div class="icon icon_coins"></div><span id="pp_coins_p${id}" class="pp_value pp_coins">${coins}</span>\
 		<div class="icon icon_food "></div><span id="pp_ncard_p${id}" class="pp_value pp_food ">${ncard}<span id="pp_food_p${id}" class="smalltext">/${food}</span></span>\
 		</div>';
+	this.deck.jstpl_stock_item= "<div id=\"${id}\" class=\"epoch_card\" style=\"top:${top}px;left:${left}px;width:${width}px;height:${height}px;z-index:${position};background-image:url('${image}');\"></div>";
 </script>
 
 {OVERALL_GAME_FOOTER}
