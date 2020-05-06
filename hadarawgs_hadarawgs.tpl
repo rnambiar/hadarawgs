@@ -2,8 +2,15 @@
 
 <div class="playerboards">
 	<!-- BEGIN player -->
-	<h3 style="color:#{PLAYER_COLOR}" class="player_{PLAYER_COLOR}">{PLAYER_NAME}</h3>
-	<div id="board_p{PLAYER_ID}" class="playerboard">
+	<div id="board_p{PLAYER_ID}" class="playerboard whiteblock">
+		<h3 style="color:#{PLAYER_COLOR}" class="player_{PLAYER_COLOR}">{PLAYER_NAME}</h3>
+		<div class="animal_p{PLAYER_ID} icon_animal icon_{PLAYER_COLOR}"></div>
+		<div class="playerboard_resources">
+			<span class="resource resource_income"><span id="income_p{PLAYER_ID}">-</span></span>
+			<span class="resource resource_military"><span id="military_p{PLAYER_ID}">-</span></span>
+			<span class="resource resource_culture"><span id="culture_p{PLAYER_ID}">-</span></span>
+			<span class="resource resource_food"><span id="food_p{PLAYER_ID}">-</span></span>
+		</div>
 		<div class="colony_area">
 			<div id="colony3_p{PLAYER_ID}" class="colony"></div>
 			<div id="colony9_p{PLAYER_ID}" class="colony"></div>
@@ -17,21 +24,14 @@
 			<div id="gold1_p{PLAYER_ID}" class="medal_gold"></div>
 			<div id="gold2_p{PLAYER_ID}" class="medal_gold"></div>
 		</div>
-		<div class="animal_p{PLAYER_ID}"></div>
 		<div class="statue_area">
 			<div id="statue1_p{PLAYER_ID}" class="statue"></div>
 			<div id="statue2_p{PLAYER_ID}" class="statue"></div>
 			<div id="statue3_p{PLAYER_ID}" class="statue"></div>
 			<div id="statue4_p{PLAYER_ID}" class="statue"></div>
 		</div>
-		<div class="whiteblock playerboard_resources">
-			<div class="resource"><span id="income_p{PLAYER_ID}">-</span></div>
-			<div class="resource"><span id="military_p{PLAYER_ID}">-</span></div>
-			<div class="resource"><span id="culture_p{PLAYER_ID}">-</span></div>
-			<div class="resource"><span id="food_p{PLAYER_ID}">-</span></div>
-		</div>
+		<div id="deck_p{PLAYER_ID}"class="card_area">card zone</div>
 	</div>
-	<div id="deck_p{PLAYER_ID}"class="whiteblock card_area"></div>
 	<!-- END player -->
 </div>
 

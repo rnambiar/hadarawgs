@@ -80,7 +80,7 @@ function (dojo, declare) {
 				for (cardtype = 0; cardtype < 5; cardtype++) {
 					for (var cardid = 0; cardid < 10; cardid++) {
 						var cardref = cardtype * 10 + epoch * 50 + cardid;
-						this.deck.addItemType(cardref, cardtype, g_gamethemeurl + 'img/cards_small.png', cardref);
+						this.deck.addItemType(cardref, cardtype, g_gamethemeurl + 'img/cards.png', cardref);
 						this.deck.addToStock(cardref, 'deck');
 					}
 				}

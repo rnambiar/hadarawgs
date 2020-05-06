@@ -22,22 +22,51 @@
 	font-weight: bold;
 }
 
-/* animals match player colors */
-.player_d80000::after { fond-size: 70%; content: " - dragon";  }
-.player_ffb000::after { fond-size: 70%; content: " - lion";    }
-.player_804000::after { fond-size: 70%; content: " - monkey";  }
-.player_ffffff::after { fond-size: 70%; content: " - pegasus"; }
-.player_408000::after { fond-size: 70%; content: " - scarab";  }
+.playerboards {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
 
+/* container for each player */
 .playerboard {
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-image: url('img/playerboard.png');
-	color: white;
-	text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+	min-width: 480px;
+	box-sizing: border-box;
+	margin: 10px;
+	padding-top: 5px;
+	box-shadow: 0px 0px 2px 0px #736767;
+	transition: 2s all linear; -webkit-transition: 2s all linear;
+}
 
-	/* used to keep board aspect ratio */
-	padding-top: 42.8%;
+.icon_animal {
+	width: 32px;
+	height: 37px;
+	background-size: 300%;
+	background-image: url('img/animals.png');
+}
+
+/* animals match player colors */
+.icon_804000  { background-position:    0px   0px; }
+.icon_408000  { background-position:  -32px   0px; }
+.icon_d80000  { background-position:  -64px   0px; }
+.icon_ffffff  { background-position:    0px -38px; }
+.icon_ffb000  { background-position:  -32px -38px; }
+
+.player_804000::after { fond-size: 70%; content: " - monkey";  }
+.player_408000::after { fond-size: 70%; content: " - scarab";  }
+.player_d80000::after { fond-size: 70%; content: " - dragon";  }
+.player_ffffff::after { fond-size: 70%; content: " - pegasus"; }
+.player_ffb000::after { fond-size: 70%; content: " - lion";    }
+
+resource_income   { color: orange; }
+resource_military { color: red;    }
+resource_culture  { color: blue;   }
+resource_food     { color: green;  }
+
+.colony {
+	width: 20px;
+	height: 20px;
+	background-color: red;
 }
 
 /*
@@ -55,15 +84,3 @@
 /* TODO: merge all icons into a single image (w/ transparency) */
 .icon_coins { background-image: url('img/coins.png'); }
 .icon_food  { background-image: url('img/grape.png'); }
-
-.icon_animal {
-	width: 32px;
-	height: 37px;
-	background-size: 300%;
-	background-image: url('img/animals.png');
-}
-.icon_monkey  { background-position:    0px   0px; }
-.icon_scarab  { background-position:  -32px   0px; }
-.icon_dragon  { background-position:  -64px   0px; }
-.icon_pegasus { background-position:    0px -38px; }
-.icon_lion    { background-position:  -32px -38px; }
