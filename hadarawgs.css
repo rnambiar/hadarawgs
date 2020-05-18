@@ -58,15 +58,40 @@
 .player_ffffff::after { fond-size: 70%; content: " - pegasus"; }
 .player_ffb000::after { fond-size: 70%; content: " - lion";    }
 
-resource_income   { color: orange; }
-resource_military { color: red;    }
-resource_culture  { color: blue;   }
-resource_food     { color: green;  }
+.resource_income   { background-color: goldenrod; }
+.resource_military { background-color: firebrick; }
+.resource_culture  { background-color: skyblue;   }
+.resource_food     { background-color: green;     }
+
+.resource {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-align: center;
+}
+
+.medal_silver, .medal_gold {
+	width: 20px;
+	height: 20px;
+	display:inline-block;
+}
+.medal_silver { background-color: silver; }
+.medal_gold   { background-color: gold; }
 
 .colony {
 	width: 20px;
 	height: 20px;
-	background-color: red;
+	background-color: firebrick;
+	display:inline-block;
+	text-align: center;
+}
+
+.statue {
+	width: 20px;
+	height: 20px;
+	background-color: lightskyblue;
+	display:inline-block;
+	text-align: center;
 }
 
 /*
